@@ -1,0 +1,7 @@
+{
+  "name": "T2D Companion",
+  "description": "An Android-first, offline-ready companion app for Type 2 Diabetes management, focusing on privacy, accessibility, and proactive health tracking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

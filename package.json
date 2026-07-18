@@ -1,0 +1,28 @@
+{
+  "name": "t2d-companion",
+  "private": true,
+  "version": "1.3.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run copy:scan && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "copy:scan": "node scripts/copy-scan.js || ts-node scripts/copy-scan.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "release:check": "node scripts/go-no-go.js || ts-node scripts/go-no-go.ts",
+    "prebuild": "npm run copy:scan && npm run release:check"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "jsdom": "^22.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vitest": "^0.34.6"
+  }
+}
